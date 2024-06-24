@@ -25,6 +25,10 @@ const onTopBarMenuButton = () => {
     router.push({ name: 'mainuserlogin' });
     // topbarMenuActive.value = !topbarMenuActive.value;
 };
+const handleCartClick = () => {
+    router.push({ name: 'paymentgateway' });
+    // topbarMenuActive.value = !topbarMenuActive.value;
+};
 const onSettingsClick = () => {
     topbarMenuActive.value = false;
     router.push('/documentation');
@@ -72,18 +76,18 @@ const hideTopbar = computed(() => {
             <!-- <span>SAKAI</span> -->
         </router-link>
 
-        <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle()">
+        <!-- <button class="p-link layout-menu-button layout-topbar-button" @click="onMenuToggle()">
             <i class="pi pi-bars"></i>
-        </button>
+        </button> -->
 
         <button v-if="!hideTopbar" class="p-link layout-topbar-menu-button layout-topbar-button" @click="onTopBarMenuButton()">
             <i class="pi pi-ellipsis-v"></i>
         </button>
 
         <div v-if="!hideTopbar" class="layout-topbar-menu" :class="topbarMenuClasses">
-            <button @click="onTopBarMenuButton()" class="p-link layout-topbar-button">
-                <i class="pi pi-calendar"></i>
-                <span>Calendar</span>
+            <button @click="handleCartClick" class="p-link layout-topbar-button">
+                <i class="pi pi-shopping-cart"></i>
+                <span>Cart</span>
             </button>
             <button @click="onTopBarMenuButton()" class="p-link layout-topbar-button">
                 <i class="pi pi-user"></i>

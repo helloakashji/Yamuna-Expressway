@@ -24,6 +24,11 @@ const router = createRouter({
                     component: () => import('@/views/UserLogIn.vue')
                   },
                 {
+                    path: '/payment-gateway', 
+                    name: 'paymentgateway', 
+                    component: () => import('@/views/PaymentGateway.vue')
+                  },
+                {
                     path: '/uikit/formlayout',
                     name: 'formlayout',
                     component: () => import('@/views/uikit/FormLayout.vue')
